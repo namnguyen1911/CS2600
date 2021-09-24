@@ -23,7 +23,7 @@ int main() {
         switch(answer) {
             case '1': guessingGame(maxNumber); break;
             case '2': maxNumber = changeMax(); break;
-            case '3': check = false; break;
+            case '3': check = false; printf("Thank for playing the game"); break;
             default: printf("Invalid input!\n");
         }
 
