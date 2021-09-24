@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits.h>
 
 void guessingGame();
 int changeMax();
@@ -76,7 +77,10 @@ void guessingGame(int maxNumber) {
 }
 
 int changeMax() {
-    printf
-    return 0;
+    int maxNumber = 0;
+    printf("You can only enter max number up to %d\n", INT_MAX);
+    printf("Enter your max number:\n");
+    scanf("%d%*c",&maxNumber);
+    return maxNumber;
 }
 
