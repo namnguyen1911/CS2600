@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
 
 void guessingGame();
 int changeMax();
@@ -35,11 +34,49 @@ int main() {
 }
 
 void guessingGame(int maxNumber) {
-    
+    time_t t;
+    int rightNumber = 0;
+    bool check = true;
+    int ans = 0;
+    int buffer = 0;
+
+
+    srand((unsigned) time(&t));
+    rightNumber = (rand() % maxNumber) + 1;
+
+    while(check) {
+        printf("Enter a number from 1 to %d\n", maxNumber);
+
+        if(scanf("%d%*c", &ans) != 1) {
+            buffer = getchar();
+            if(buffer == 'q') {
+                buffer = getchar();
+                break;
+            }
+            else {
+                printf("Invalid input!\n");
+                while((buffer = getchar()) != EOF && buffer != '\n');
+            }
+        }
+        
+        else if(ans < rightNumber) {
+            printf("Your guess is too low\n");
+        }
+        else if (ans > rightNumber) {
+            printf("Your guess is too large\n");
+        }
+        else if (ans == rightNumber) {
+            printf("You won!\n");
+            check = false;
+        }
+        
+    }
+
 
 }
 
 int changeMax() {
+    printf
     return 0;
 }
 
