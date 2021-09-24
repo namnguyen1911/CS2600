@@ -78,9 +78,24 @@ void guessingGame(int maxNumber) {
 
 int changeMax() {
     int maxNumber = 0;
+    bool check = true;
     printf("You can only enter max number up to %d\n", INT_MAX);
     printf("Enter your max number:\n");
-    scanf("%d%*c",&maxNumber);
+
+    while(check) {
+        if(scanf("%d%*c",&maxNumber) != 1) {
+            printf("Invalid input!\n");
+            while((maxNumber = getchar()) != EOF && maxNumber != '\n');
+        }
+        else if(maxNumber > INT_MAX || maxNumber < 0) {
+            printf("Invalid input!\n");
+            continue;
+        }
+        else {
+            break;
+        }
+    }
+    
     return maxNumber;
 }
 
