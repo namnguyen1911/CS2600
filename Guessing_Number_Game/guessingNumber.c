@@ -18,6 +18,7 @@ int main() {
     int maxNumber = 0;
     bool check = true;
 
+    //Read max number from file
     maxNumber = readFile();
 
     //Prompt the users select the provided options
