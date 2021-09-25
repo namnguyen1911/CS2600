@@ -4,8 +4,10 @@
 #include <stdbool.h>
 #include <limits.h>
 
-void guessingGame();
+void guessingGame(int maxNumber);
 int changeMax();
+void maxNumber(int maxNumber);
+void writeFile(int maxNumber);
 
 
 int main() {
@@ -24,7 +26,7 @@ int main() {
         //Option menu
         switch(answer) {
             case '1': guessingGame(maxNumber); break;
-            case '2': maxNumber = changeMax(); break;
+            case '2': maxNumber = changeMax(); writeFile(maxNumber); break;
             case '3': check = false; printf("Thank for playing the game"); break;
             default: printf("Invalid input!\n");
         }
@@ -110,4 +112,12 @@ int changeMax() {
     
     return maxNumber;
 }
+
+void writeFile(int maxNumber) {
+    FILE *fp;
+    fp = fopen("maxNumber.txt","w+");
+    fprintf(fp,"%d", maxNumber);
+    fclose(fp);
+}
+
 
