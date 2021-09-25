@@ -18,16 +18,26 @@ int main() {
     int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0, amountOfMeals = 0;
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
     bool privateVehicle = false;
-    char carType = '\0';
 
     printf("Enter the total number of days spent on the trip: ");
     daysOfTrip = checkIntChar();
 
-    printf("Enter the the time of departure on the first day of the trip: ");
+    
+    printf("Enter the the military time of departure on the first day of the trip: ");
     timeOfDeparture = checkIntChar();
+    //Check if users input the wrong time
+    while(timeOfDeparture < 0 || timeOfDeparture > 2359) {
+        printf("Invalid input!\n");
+        timeOfDeparture = checkIntChar();
+    }
 
-    printf("Enter the time of arrival back home on the last day of the trip: ");
+    printf("Enter the military time of arrival back home on the last day of the trip: ");
     timeOfArrival = checkIntChar();
+    //Check if users input the wrong time
+    while(timeOfArrival < 0 || timeOfArrival > 2359) {
+        printf("Invalid input!\n");
+        timeOfArrival = checkIntChar();
+    }
 
     printf("Enter round-trip airfare: ");
     airfare = checkDoubleChar();
@@ -70,6 +80,7 @@ int main() {
 
 
 
+
     return 0;
 }
 
@@ -95,7 +106,7 @@ int checkIntChar() {
     return number;
 }
 
-//If users input characters instead of integer, prompt reinput and remove all buffers
+//If users input characters instead of double, prompt reinput and remove all buffers
 double checkDoubleChar() {
     double number;
 
