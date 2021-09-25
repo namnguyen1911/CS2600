@@ -8,13 +8,17 @@ void guessingGame(int maxNumber);
 int changeMax();
 void maxNumber(int maxNumber);
 void writeFile(int maxNumber);
+int readFile();
+//bool isFileExist();
 
 
 int main() {
     //Declaration and initialization
     char answer = '\0';
-    int maxNumber = 10;
+    int maxNumber = 0;
     bool check = true;
+
+    maxNumber = readFile();
 
     //Prompt the users select the provided options
     while(check) {
@@ -113,11 +117,37 @@ int changeMax() {
     return maxNumber;
 }
 
+//Save the requested maxNumber to maxNumber.txt
 void writeFile(int maxNumber) {
     FILE *fp;
     fp = fopen("maxNumber.txt","w+");
     fprintf(fp,"%d", maxNumber);
     fclose(fp);
+}
+
+/*bool isFileExist() {
+    FILE *fp;
+    if(fp = fopen("maxNumber.txt","r")) {
+        fclose(fp);
+        return true;
+    }
+    return false;
+}*/
+
+int readFile() {
+    FILE *fp;
+    int maxN;
+
+    if((fp = fopen("maxNumber","r")) == NULL) {
+        return 10;
+    }
+    else {
+        fp = fopen("maxNumber","r");
+        fscanf(fp,"%d",&maxN);
+        fclose(fp);
+        return maxN;
+    }
+
 }
 
 
