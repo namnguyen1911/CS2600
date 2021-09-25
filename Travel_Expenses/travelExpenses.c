@@ -14,6 +14,7 @@ bool checkChar();
 //Main function
 int main() {
     //Declaration and initialization
+    //time is in military time (000--700--1200--1500--2359)
     int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0, amountOfMeals = 0;
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
     bool privateVehicle = false;
@@ -49,17 +50,21 @@ int main() {
     printf("Enter the taxi fees: ");
     taxiFees = checkDoubleChar();
 
-    printf("Enter the hotel expenses: ");
-    hotelExpenses = checkDoubleChar();
-
     printf("Enter the conference or registration fee: ");
     conferenceFees = checkDoubleChar();
 
-    printf("Enter amount of meals: ");
-    amountOfMeals = checkIntChar();
 
 
+    //{allowable, actual}
+    int hotel[2];
+    hotelCost(hotel, daysOfTrip);    
+   
+    //create an array to pass through function, limitations of C
+    int mealExpense[2];
 
+    //returns {allowable expense, actual expense}
+    mealPlan(mealExpense, daysOfTrip,timeOfDeparture, timeOfArrival);
+    int mealDiff = mealExpense[1] - mealExpense[0];
 
 
 
