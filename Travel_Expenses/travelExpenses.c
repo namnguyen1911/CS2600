@@ -8,13 +8,14 @@ double exessAmount();
 double saveAmount();
 int checkIntChar();
 double checkDoubleChar();
+bool checkChar();
 
 //Main function
 int main() {
     //Declaration and initialization
     int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0, amountOfMeals = 0;
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
-    bool privateVehicle = true;
+    bool privateVehicle = false;
     char carType = '\0';
 
     printf("Enter the total number of days spent on the trip: ");
@@ -33,8 +34,29 @@ int main() {
     carRental = checkDoubleChar();
 
 
-    //printf("\nIs it a private car? (y/n) ");
-    //scanf(" %c%*c", &carType);
+    printf("Did you use private car? (y/n) ");
+    privateVehicle = checkChar();
+
+    if(privateVehicle == true) {
+        printf("Enter miles driven: ");
+        miles = checkDoubleChar();
+    }
+
+    printf("Enter the parking fees: ");
+    parkingFees = checkDoubleChar();
+
+    printf("Enter the taxi fees: ");
+    taxiFees = checkDoubleChar();
+
+    printf("Enter the hotel expenses: ");
+    hotelExpenses = checkDoubleChar();
+
+    printf("Enter the conference or registration fee: ");
+    conferenceFees = checkDoubleChar();
+
+    printf("Enter amount of meals: ");
+    amountOfMeals = checkIntChar();
+
 
 
 
@@ -81,6 +103,21 @@ double checkDoubleChar() {
         }
     }
     return number;
+}
+
+bool checkChar() {
+    int number = 0;
+
+    //Clear the buffer if the inputs are wrong
+    while(true) {
+        number = getchar();
+        if(number == 'y' || number == 'Y') {
+            return true;
+        }
+        else if(number == 'n' || number == 'N') {
+            return false;
+        }
+    }
 }
 
 
