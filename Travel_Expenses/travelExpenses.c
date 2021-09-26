@@ -94,8 +94,8 @@ int main() {
 }
 
 //Implementation
-double totalExpense() {
-    return airfare + 0.27*miles + parkingFees + taxiFees + conferenceFees;
+double totalExpense(double airfare, double milesExpenses, double parkingFees, double taxiFees, double conferenceFees) {
+    return airfare + milesExpenses + parkingFees + taxiFees + conferenceFees;
 }
 double allowableExpense() {
 
