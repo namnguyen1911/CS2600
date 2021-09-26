@@ -6,8 +6,9 @@
 //Declaration
 double totalExpense();
 double allowableExpense();
-double excessAmount();
-double saveAmount();
+double excessAmount(double allowable, double actual);
+double saveAmount(double allowable, double actual);
+double milesExpenses(double miles);
 
 //Main function
 int main() {
@@ -78,12 +79,12 @@ int main() {
 
 
     //Display
-    printf("%-25s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Total Expenses", '|', "Reimbursement");
-    printf("%s\n","----------------------------------------------------------------------------------------------");
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', 0.00);
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Car rentals", '|', carRental, '|', carRental, '|', 0.00);
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Miles driven expenses", '|', 0.27*miles, '|', 0.27*miles, '|', 0.00);
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', taxiFees, '|', taxiFees, '|', taxiFees - taxiFees);
+    printf("%-25s %c %20s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Actual Expenses", '|', "Reimbursement", '|', "Saving");
+    printf("%s\n","---------------------------------------------------------------------------------------------------------------------");
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', excessAmount(airfare,airfare), '|', saveAmount(airfare,airfare));
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Car rentals", '|', carRental, '|', carRental, '|', excessAmount(carRental,carRental),'|', saveAmount(carRental,carRental));
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Miles driven expenses", '|', milesExpenses(miles), '|', milesExpenses(miles),'|', 0.0,'|',0.0);
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', taxiFees, '|', taxiFees, '|', excessAmount(taxiFees,taxiFees),'|',saveAmount(taxiFees,taxiFees));
 
 
 
@@ -94,16 +95,16 @@ int main() {
 
 //Implementation
 double totalExpense() {
-    return airfare + 0.27*miles + parkingFees + taxiFees + conferenceFees;
+    //return airfare + 0.27*miles + parkingFees + taxiFees + conferenceFees;
+    return 0;
 }
 double allowableExpense() {
-
 }
-double excessAmount() {
-    return calcCostOfEmployeeParkingFees + calcCostOfEmployeeTaxiFees;
+double excessAmount(double allowable, double actual) {
+    return (actual > allowable) ? (actual - allowable) : 0.0;
 }
-double saveAmount() {
-    return calcCostOFCompanyParkingFees + calcCostOfCompanyTaxiFees;
+double saveAmount(double allowable, double actual) {
+    return (actual < allowable) ? (allowable - actual) : 0.0;
 }
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
@@ -157,6 +158,10 @@ bool checkChar() {
             return false;
         }
     }
+}
+
+double milesExpenses(double miles) {
+    return 0.27 * miles;
 }
 
 
