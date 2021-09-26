@@ -6,7 +6,7 @@
 //Declaration
 double totalExpense();
 double allowableExpense();
-double exessAmount();
+double excessAmount();
 double saveAmount();
 
 //Main function
@@ -93,10 +93,18 @@ int main() {
 }
 
 //Implementation
-double totalExpense() {}
-double allowableExpense() {}
-double exessAmount() {}
-double saveAmount() {}
+double totalExpense() {
+    return airfare + 0.27*miles + parkingFees + taxiFees + conferenceFees;
+}
+double allowableExpense() {
+
+}
+double excessAmount() {
+    return calcCostOfEmployeeParkingFees + calcCostOfEmployeeTaxiFees;
+}
+double saveAmount() {
+    return calcCostOFCompanyParkingFees + calcCostOfCompanyTaxiFees;
+}
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
 int checkIntChar() {
