@@ -101,10 +101,10 @@ double allowableExpense() {
 
 }
 double excessAmount() {
-    return calcCostOfEmployeeParkingFees + calcCostOfEmployeeTaxiFees;
+    return calcCostOfEmployeeParkingFees(daysOfTrip, parkingFees) + calcCostOfEmployeeTaxiFees(daysOfTrip, taxiFees);
 }
 double saveAmount() {
-    return calcCostOFCompanyParkingFees + calcCostOfCompanyTaxiFees;
+    return calcCostOFCompanyParkingFees(daysOfTrip, parkingFees) + calcCostOfCompanyTaxiFees(daysOfTrip, taxiFees;
 }
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
