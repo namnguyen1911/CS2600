@@ -100,11 +100,11 @@ double totalExpense(double airfare, double milesExpenses, double parkingFees, do
 double allowableExpense() {
 
 }
-double excessAmount() {
-    return calcCostOfEmployeeParkingFees(daysOfTrip, parkingFees) + calcCostOfEmployeeTaxiFees(daysOfTrip, taxiFees);
+double excessAmount(double allowable, double actual) {
+    return (actual > allowable) ? (actual - allowable) : 0.0;
 }
-double saveAmount() {
-    return calcCostOFCompanyParkingFees(daysOfTrip, parkingFees) + calcCostOfCompanyTaxiFees(daysOfTrip, taxiFees;
+double saveAmount(double allowable, double actual) {
+    return (actual < allowable) ? (allowable - actual) : 0.0;
 }
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
