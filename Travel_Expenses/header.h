@@ -1,12 +1,6 @@
 #ifndef header_h 
 //if multiple files have include header it will only be read once by compiler
 #define header_h
-#include <stdio.h>
-#include <stdbool.h>
-
-int checkIntChar();
-double checkDoubleChar();
-bool checkChar();
 
 #include <stdbool.h>
 #include <stdio.h>
