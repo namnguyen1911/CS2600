@@ -42,3 +42,7 @@ double calcCostOfCompanyTaxiFees (int daysOfTrip, int fees){
 double allowableTaxiFee(int daysOfTrip) {
     return daysOfTrip * 10.0;
 }
+
+double allowableParkingFee(int daysOfTrip) {
+    return daysOfTrip * 6.0;
+}

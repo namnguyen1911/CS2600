@@ -18,4 +18,5 @@ double milesExpenses(double miles);
 //double calcCostOfEmployeeTaxiFees(int daysOfTrip, int fees);
 //double calcCostOfCompanyTaxiFees(int daysOfTrip, int fees);
 double allowableTaxiFee(int daysOfTrip);
+double allowableParkingFee(int daysOfTrip);
 #endif //header.h
