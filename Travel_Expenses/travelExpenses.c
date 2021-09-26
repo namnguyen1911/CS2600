@@ -8,11 +8,11 @@ double totalExpense();
 double allowableExpense();
 double exessAmount();
 double saveAmount();
-int checkIntChar();
-double checkDoubleChar();
-bool checkChar();
-void mealPlan(int *total, int days, int departureTime, int arrivalTime);
-void hotelCost(int *total, int days);
+//int checkIntChar();
+//double checkDoubleChar();
+//bool checkChar();
+//void mealPlan(int *total, int days, int departureTime, int arrivalTime);
+//void hotelCost(int *total, int days);
 
 //Main function
 int main() {
