@@ -11,7 +11,7 @@ double calcCostOfEmployeeParkingFees (int daysOfTrip, int fees){
     }
 }
 
-double calcCostOFCompanyParkingFees (int daysOfTrip, int fees){
+double calcCostOfCompanyParkingFees (int daysOfTrip, int fees){
     if (fees < daysOfTrip * 6.00){
         return fees;
     }
