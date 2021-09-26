@@ -8,6 +8,12 @@ int checkIntChar();
 double checkDoubleChar();
 bool checkChar();
 
+#include <stdbool.h>
+#include <stdio.h>
+
+int checkIntChar();
+double checkDoubleChar();
+bool checkChar();
 void hotelCost(int *total, int days);
 
 void mealPlan(int *total, int days, int departureTime, int arrivalTime);
