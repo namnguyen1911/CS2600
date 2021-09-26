@@ -1,25 +1,40 @@
 #include <stdio.h>
-
-double calcCostOfMiles (int miles){
-    return miles * 0.27;
-}
+#include "header.h"
 
 double calcCostOfEmployeeParkingFees (int daysOfTrip, int fees){
-    // NOTE: WIP
-    return 0.0;
+    fees -= (daysOfTrip * 6.00);
+    if (fees <= 0){
+        return 0.0;
+    }
+    else {
+        return fees;
+    }
 }
 
 double calcCostOFCompanyParkingFees (int daysOfTrip, int fees){
-    // NOTE: WIP
-    return 0.0;
+    if (fees < daysOfTrip * 6.00){
+        return fees;
+    }
+    else {
+        return daysOfTrip * 6.00;
+    }
 }
 
 double calcCostOfEmployeeTaxiFees (int daysOfTrip, int fees){
-    // NOTE: WIP
-    return 0.0;
+    fees -= (daysOfTrip * 10.00);
+    if (fees <= 0){
+        return 0.0;
+    }
+    else {
+        return fees;
+    }
 }
 
 double calcCostOfCompanyParkingFees (int daysOfTrip, int fees){
-    // NOTE: WIP
-    return 0.0;
+    if (fees < daysOfTrip * 10.00){
+        return fees;
+    }
+    else {
+        return daysOfTrip * 10.00;
+    }
 }
