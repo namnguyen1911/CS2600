@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /*This program is meant to calcuate:
      how many meals are eaten
      how much money did they cost
@@ -17,7 +16,7 @@ The program should only ask for the amounts of allowable meals. (The company all
  */
 
 
-void meanPlan(int *total, int days, int departureTime, int arrivalTime){
+void mealPlan(int *total, int days, int departureTime, int arrivalTime){
     //total {allowable expense, expense}
     //price of breakfast, lunch, and dinner respectively
     int breakfast = 9;
