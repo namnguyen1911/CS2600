@@ -8,11 +8,7 @@ double totalExpense();
 double allowableExpense();
 double exessAmount();
 double saveAmount();
-//int checkIntChar();
-//double checkDoubleChar();
-//bool checkChar();
-void mealPlan(int *total, int days, int departureTime, int arrivalTime);
-void hotelCost(int *total, int days);
+
 
 //Main function
 int main() {
@@ -21,6 +17,10 @@ int main() {
     int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0, amountOfMeals = 0;
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
     bool privateVehicle = false;
+    //{allowable, actual}
+    int hotel[2];
+    //create an array to pass through function, limitations of C
+    int mealExpense[2];
 
     printf("Enter the total number of days spent on the trip: ");
     daysOfTrip = checkIntChar();
@@ -68,17 +68,23 @@ int main() {
 
 
 
-    //{allowable, actual}
-    int hotel[2];
+    //Calculate total hotel cost
     hotelCost(hotel, daysOfTrip);    
    
-    //create an array to pass through function, limitations of C
-    int mealExpense[2];
+    
 
     //returns {allowable expense, actual expense}
     mealPlan(mealExpense, daysOfTrip,timeOfDeparture, timeOfArrival);
     int mealDiff = mealExpense[1] - mealExpense[0];
 
+
+    //Display
+    printf("%-25s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Total Expenses", '|', "Reimbursement");
+    printf("%s\n","----------------------------------------------------------------------------------------------");
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', 0.00);
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Car rentals", '|', carRental, '|', carRental, '|', 0.00);
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Miles driven expenses", '|', 0.27*miles, '|', 0.27*miles, '|', 0.00);
+    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', taxiFees, '|', taxiFees, '|', taxiFees - taxiFees);
 
 
 

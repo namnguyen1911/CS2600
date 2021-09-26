@@ -48,6 +48,7 @@ void mealPlan(int *total, int days, int departureTime, int arrivalTime){
         total[0] = total[0] + (days-2)*(breakfast + lunch + dinner);
     }
     
-    printf("How much did you actually spend on meals?\n");
-    scanf("%d", total[1]);
+    printf("How much did you actually spend on meals?");
+    //scanf("%d", total[1]);
+    total[1] = checkDoubleChar();
 }
