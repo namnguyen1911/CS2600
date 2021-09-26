@@ -10,5 +10,8 @@ double checkDoubleChar();
 bool checkChar();
 void hotelCost(int *total, int days);
 void mealPlan(int *total, int days, int departureTime, int arrivalTime);
-double calcCostOfEmployeeParkingFees(int daysOfTrip, int fees); 
+double calcCostOfEmployeeParkingFees(int daysOfTrip, int fees);
+double calcCostOfCompanyParkingFees(int daysOfTrip, int fees);
+double calcCostOfEmployeeTaxiFees(int daysOfTrip, int fees);
+double calcCostOfCompanyTaxiFees(int daysOfTrip, int fees);
 #endif //header.h
