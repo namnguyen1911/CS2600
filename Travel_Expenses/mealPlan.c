@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 
 /*This program is meant to calcuate:
      how many meals are eaten
@@ -15,9 +15,10 @@ Dinner is allowed on the last day if the time of arrival is after 7 p.m.
 
 The program should only ask for the amounts of allowable meals. (The company allows up to $9 for breakfast, $12 for lunch, and $16 for dinner. Anything more than this must be paid by the 
  */
+#include <stdio.h>
+#include "header.h"
 
-
-void meanPlan(int *total, int days, int departureTime, int arrivalTime){
+void mealPlan(int *total, int days, int departureTime, int arrivalTime){
     //total {allowable expense, expense}
     //price of breakfast, lunch, and dinner respectively
     int breakfast = 9;

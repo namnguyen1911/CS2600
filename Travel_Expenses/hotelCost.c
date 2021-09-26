@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "header.h"
 
 void hotelCost(int *total, int days){
     int dailyHotelExpense = 90;
