@@ -49,6 +49,4 @@ void meanPlan(int *total, int days, int departureTime, int arrivalTime){
     
     printf("How much did you actually spend on meals?\n");
     scanf("%d", total[1]);
-
-    return total;
 }
