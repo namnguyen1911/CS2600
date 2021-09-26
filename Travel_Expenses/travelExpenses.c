@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-
+#include "header.h"
 //Testing Testing.. Benjamin Ung
 //Declaration
 double totalExpense();
