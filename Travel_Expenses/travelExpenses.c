@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdbool.h>
 #include "header.h"
@@ -10,6 +11,8 @@ double saveAmount();
 int checkIntChar();
 double checkDoubleChar();
 bool checkChar();
+void mealPlan(int *total, int days, int departureTime, int arrivalTime);
+void hotelCost(int *total, int days);
 
 //Main function
 int main() {
@@ -99,6 +102,9 @@ int checkIntChar() {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
         }
+        else if(number < 0) {
+            printf("Cannot be negative!\n");
+        }
         else {
             break;
         }
@@ -114,6 +120,9 @@ double checkDoubleChar() {
         if((scanf("%lf%*c", &number)) != 1) {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
+        }
+        else if(number < 0.0) {
+            printf("Cannot be negative!\n");
         }
         else {
             break;
