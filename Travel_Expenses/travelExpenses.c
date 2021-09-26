@@ -16,7 +16,7 @@ int main() {
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
     bool privateVehicle = false;
     //{allowable, actual}
-    int hotel[2];
+    double hotel[2];
     //create an array to pass through function, limitations of C
     int mealExpense[2];
 
@@ -85,6 +85,7 @@ int main() {
     printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', allowableTaxiFee(daysOfTrip) , '|', taxiFees, '|', excessAmount(allowableTaxiFee(daysOfTrip),taxiFees),'|',saveAmount(allowableTaxiFee(daysOfTrip),taxiFees));
     printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Parking", '|', allowableParkingFee(daysOfTrip), '|', parkingFees, '|', excessAmount(allowableParkingFee(daysOfTrip),parkingFees), '|', saveAmount(allowableParkingFee(daysOfTrip),parkingFees));
     printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Conference or Registration", '|', conferenceFees, '|', conferenceFees,'|', 0.0,'|',0.0);
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Hotel", '|', hotel[0], '|', hotel[1],'|', excessAmount(hotel[0],hotel[1]),'|',saveAmount(hotel[0],hotel[1]));
     printf("%s\n","---------------------------------------------------------------------------------------------------------------------");
     //printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Total", '|', totalExpense(airfare,milesExpenses,parkingFees,allowableTaxiFee(daysOfTrip),conferenceFees()), '|', totalExpense(airfare,milesExpenses,parkingFees,taxiFees,conferenceFees), '|', totalExpense(0.0,0.0,),'|', saveAmount(carRental,carRental));
 
