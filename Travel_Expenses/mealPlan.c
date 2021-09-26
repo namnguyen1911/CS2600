@@ -17,10 +17,8 @@ The program should only ask for the amounts of allowable meals. (The company all
  */
 
 
-
-int[] main(int days, int departureTime, int arrivalTime){
+void meanPlan(int *total, int days, int departureTime, int arrivalTime){
     //total {allowable expense, expense}
-    int total = {0,0};
     //price of breakfast, lunch, and dinner respectively
     int breakfast = 9;
     int lunch = 12;
@@ -51,6 +49,4 @@ int[] main(int days, int departureTime, int arrivalTime){
     
     printf("How much did you actually spend on meals?\n");
     scanf("%d", total[1]);
-
-    return total;
 }
