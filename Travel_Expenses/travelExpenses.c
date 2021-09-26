@@ -77,13 +77,14 @@ int main() {
 
 
     //Display
-    printf("%-25s %c %20s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Actual Expenses", '|', "Reimbursement", '|', "Saving");
+    printf("%-27s %c %20s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Actual Expenses", '|', "Reimbursement", '|', "Saving");
     printf("%s\n","---------------------------------------------------------------------------------------------------------------------");
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', excessAmount(airfare,airfare), '|', saveAmount(airfare,airfare));
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Car rentals", '|', carRental, '|', carRental, '|', excessAmount(carRental,carRental),'|', saveAmount(carRental,carRental));
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Miles driven expenses", '|', milesExpenses(miles), '|', milesExpenses(miles),'|', 0.0,'|',0.0);
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', allowableTaxiFee(daysOfTrip) , '|', taxiFees, '|', excessAmount(allowableTaxiFee(daysOfTrip),taxiFees),'|',saveAmount(allowableTaxiFee(daysOfTrip),taxiFees));
-    printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Parking", '|', allowableParkingFee(daysOfTrip), '|', parkingFees, '|', excessAmount(allowableParkingFee(daysOfTrip),parkingFees), '|', saveAmount(allowableParkingFee(daysOfTrip),parkingFees));
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', excessAmount(airfare,airfare), '|', saveAmount(airfare,airfare));
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Car rentals", '|', carRental, '|', carRental, '|', excessAmount(carRental,carRental),'|', saveAmount(carRental,carRental));
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Miles driven expenses", '|', milesExpenses(miles), '|', milesExpenses(miles),'|', 0.0,'|',0.0);
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Taxi expenses", '|', allowableTaxiFee(daysOfTrip) , '|', taxiFees, '|', excessAmount(allowableTaxiFee(daysOfTrip),taxiFees),'|',saveAmount(allowableTaxiFee(daysOfTrip),taxiFees));
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Parking", '|', allowableParkingFee(daysOfTrip), '|', parkingFees, '|', excessAmount(allowableParkingFee(daysOfTrip),parkingFees), '|', saveAmount(allowableParkingFee(daysOfTrip),parkingFees));
+    printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Conference or Registration", '|', conferenceFees, '|', conferenceFees,'|', 0.0,'|',0.0);
     printf("%s\n","---------------------------------------------------------------------------------------------------------------------");
     //printf("%-25s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Total", '|', totalExpense(airfare,milesExpenses,parkingFees,allowableTaxiFee(daysOfTrip),conferenceFees()), '|', totalExpense(airfare,milesExpenses,parkingFees,taxiFees,conferenceFees), '|', totalExpense(0.0,0.0,),'|', saveAmount(carRental,carRental));
 
