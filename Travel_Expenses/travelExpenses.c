@@ -94,6 +94,9 @@ int checkIntChar() {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
         }
+        else if(number < 0) {
+            printf("Cannot be negative!\n");
+        }
         else {
             break;
         }
@@ -109,6 +112,9 @@ double checkDoubleChar() {
         if((scanf("%lf%*c", &number)) != 1) {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
+        }
+        else if(number < 0.0) {
+            printf("Cannot be negative!\n");
         }
         else {
             break;
