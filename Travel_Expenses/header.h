@@ -13,6 +13,7 @@ void mealPlan(double *total, int days, int departureTime, int arrivalTime);
 double excessAmount(double allowable, double actual);
 double saveAmount(double allowable, double actual);
 double milesExpenses(double miles);
+double totalExpense(double airfare, double carRentals, double milesExpenses , double taxiFees, double parkingFees, double conferenceFees, double hotelExpenses, double mealsExpenses);
 //double calcCostOfEmployeeParkingFees(int daysOfTrip, int fees);
 //double calcCostOfCompanyParkingFees(int daysOfTrip, int fees);
 //double calcCostOfEmployeeTaxiFees(int daysOfTrip, int fees);

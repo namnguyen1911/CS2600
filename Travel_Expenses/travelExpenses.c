@@ -2,11 +2,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "header.h"
-//Testing Testing.. Benjamin Ung
-//Declaration
-double totalExpense();
-double allowableExpense();
-
 
 //Main function
 int main() {
@@ -23,13 +18,13 @@ int main() {
     printf("Enter the total number of days spent on the trip: ");
     daysOfTrip = checkIntChar();
     //Check if users input less than 2 days
-    while(daysOfTrip == 1) {
+    while(daysOfTrip < 1) {
         printf("Should be greater than 1\n");
         daysOfTrip = checkIntChar();
     }
 
     
-    printf("Enter the the military time of departure on the first day of the trip: ");
+    printf("Enter the the military time of departure on the first day of the trip (7am is 700): ");
     timeOfDeparture = checkIntChar();
     //Check if users input the wrong time
     while(timeOfDeparture < 0 || timeOfDeparture > 2359) {
@@ -37,7 +32,7 @@ int main() {
         timeOfDeparture = checkIntChar();
     }
 
-    printf("Enter the military time of arrival back home on the last day of the trip: ");
+    printf("Enter the military time of arrival back home on the last day of the trip (11pm is 2300): ");
     timeOfArrival = checkIntChar();
     //Check if users input the wrong time
     while(timeOfArrival < 0 || timeOfArrival > 2359) {
@@ -82,6 +77,7 @@ int main() {
 
 
     //Display
+    printf("%s\n","-----------------------------------------------------------------------------------------------------------------------");
     printf("%-27s %c %20s %c %20s %c %20s %c %20s\n","Name of expenses", '|', "Allowable Amount", '|', "Actual Expenses", '|', "Reimbursement", '|', "Saving");
     printf("%s\n","-----------------------------------------------------------------------------------------------------------------------");
     printf("%-27s %c %20.2lf %c %20.2lf %c %20.2lf %c %20.2lf\n","Airfare", '|', airfare, '|', airfare, '|', 0.0, '|', 0.0);
