@@ -9,7 +9,7 @@ int checkIntChar();
 double checkDoubleChar();
 bool checkChar();
 void hotelCost(double *total, int days);
-void mealPlan(int *total, int days, int departureTime, int arrivalTime);
+void mealPlan(double *total, int days, int departureTime, int arrivalTime);
 double excessAmount(double allowable, double actual);
 double saveAmount(double allowable, double actual);
 double milesExpenses(double miles);

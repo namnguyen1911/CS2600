@@ -18,7 +18,7 @@ The program should only ask for the amounts of allowable meals. (The company all
 #include <stdio.h>
 #include "header.h"
 
-void mealPlan(int *total, int days, int departureTime, int arrivalTime){
+void mealPlan(double *total, int days, int departureTime, int arrivalTime){
     //total {allowable expense, expense}
     //price of breakfast, lunch, and dinner respectively
     int breakfast = 9;
@@ -48,7 +48,7 @@ void mealPlan(int *total, int days, int departureTime, int arrivalTime){
         total[0] = total[0] + (days-2)*(breakfast + lunch + dinner);
     }
     
-    printf("How much did you actually spend on meals?");
+    printf("How much did you actually spend on meals? ");
     //scanf("%d", total[1]);
     total[1] = checkDoubleChar();
 }
