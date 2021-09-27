@@ -115,7 +115,7 @@ int checkIntChar() {
     int number = 0, buffer = 0;
 
     while(true) {
-        if((scanf("%d%*c", &number)) != 1) {
+        if((scanf("%d", &number)) != 1) {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
         }
@@ -128,7 +128,7 @@ int checkIntChar() {
             break;
         }
     }
-    //Clear buffer
+    //clear buffer
     while((buffer = getchar()) != EOF && buffer != '\n');
     return number;
 }
