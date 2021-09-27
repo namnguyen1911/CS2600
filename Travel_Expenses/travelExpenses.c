@@ -7,7 +7,7 @@
 int main() {
     //Declaration and initialization
     //time is in military time (000--700--1200--1500--2359)
-    int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0, amountOfMeals = 0;
+    int daysOfTrip = 0, timeOfDeparture = 0, timeOfArrival = 0;
     double airfare = 0.0, carRental = 0.0, parkingFees = 0.0, taxiFees = 0.0, conferenceFees = 0.0, hotelExpenses = 0.0, miles = 0.0;
     bool privateVehicle = false;
     //{allowable, actual}
@@ -73,7 +73,6 @@ int main() {
 
     //returns {allowable expense, actual expense}
     mealPlan(mealExpense, daysOfTrip,timeOfDeparture, timeOfArrival);
-    //int mealDiff = mealExpense[1] - mealExpense[0];
 
 
     //Display
@@ -102,19 +101,7 @@ int main() {
 }
 
 //Implementation
-double totalExpense(double airfare, double carRentals, double milesExpenses , double taxiFees, double parkingFees, double conferenceFees, double hotelExpenses, double mealsExpenses) {
-    return airfare + carRentals + milesExpenses + taxiFees + parkingFees + conferenceFees + hotelExpenses + mealsExpenses;
-}
-/*
-double allowableExpense() {
 
-}*/
-double excessAmount(double allowable, double actual) {
-    return (actual > allowable) ? (actual - allowable) : 0.0;
-}
-double saveAmount(double allowable, double actual) {
-    return (actual < allowable) ? (allowable - actual) : 0.0;
-}
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
 int checkIntChar() {
