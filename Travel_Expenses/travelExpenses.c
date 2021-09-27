@@ -1,4 +1,11 @@
-
+//---------------------
+//CS2600.04
+//Group 08:
+//Nam Nguyen
+//Yvette Carlos
+//Jesse Chu
+//Benjamin Ung
+//---------------------
 #include <stdio.h>
 #include <stdbool.h>
 #include "header.h"
