@@ -112,20 +112,24 @@ int main() {
 
 //If users input characters instead of integer, prompt reinput and remove all buffers
 int checkIntChar() {
-    int number;
+    int number = 0, buffer = 0;
 
     while(true) {
         if((scanf("%d%*c", &number)) != 1) {
             printf("Invalid input!\n");
             while((number = getchar()) != EOF && number != '\n');
         }
-        else if(number < 0) {
-            printf("Cannot be negative!\n");
+        else if(number < 0 || number == 0) {
+            printf("Invalid input!\n");
+            //clear buffer
+            while((number = getchar()) != EOF && number != '\n');
         }
         else {
             break;
         }
     }
+    //Clear buffer
+    while((buffer = getchar()) != EOF && buffer != '\n');
     return number;
 }
 
