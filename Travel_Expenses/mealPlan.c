@@ -34,15 +34,16 @@ void mealPlan(double *total, int days, int departureTime, int arrivalTime){
         total[0] = total[0] + dinner;
     }
 
-    //arrival time meals allowed
-    if(arrivalTime > 1900){
-        total[0] = total[0] + breakfast + lunch + dinner;
-    }else if(arrivalTime > 1300){
-        total[0] = total[0] + breakfast + lunch;
-    }else if(arrivalTime > 800){
-        total[0] = total[0] + breakfast;
+    if(days > 1){
+        //arrival time meals allowed
+        if(arrivalTime > 1900){
+            total[0] = total[0] + breakfast + lunch + dinner;
+        }else if(arrivalTime > 1300){
+            total[0] = total[0] + breakfast + lunch;
+        }else if(arrivalTime > 800){
+            total[0] = total[0] + breakfast;
+        }
     }
-
     //if there are days other than arrival day and leaving day
     if(days > 2){
         total[0] = total[0] + (days-2)*(breakfast + lunch + dinner);
